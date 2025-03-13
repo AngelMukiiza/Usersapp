@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from users.views import UserListCreate
-from tasks.views import TaskListCreate
+from users.views import UserListCreate, UserDetail
+from tasks.views import TaskListCreate, TaskDetail
 from django.urls import path, include  # Ensure include is imported here
 
 
@@ -25,7 +25,9 @@ from django.urls import path, include  # Ensure include is imported here
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', UserListCreate.as_view(), name="users_list"),
+    path('users/<int:pk>/', UserDetail.as_view(), name='user_detail'),
     path('tasks/', TaskListCreate.as_view(), name="tasks_list"),
+    path('tasks/<int:pk>/', TaskDetail.as_view(), name='task_detail'),
 
 
 ]
