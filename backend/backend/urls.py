@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from users.views import UserListCreate
+from tasks.views import TaskListCreate
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('users/', UserListCreate.as_view(), name="users_list"),
+    path('tasks/', TaskListCreate.as_view(), name="tasks_list"),
+
+
+
 ]
