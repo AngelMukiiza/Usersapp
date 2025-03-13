@@ -25,6 +25,4 @@ urlpatterns = [
     path('users/', UserListCreate.as_view(), name="users_list"),
     path('tasks/', TaskListCreate.as_view(), name="tasks_list"),
 
-
-
 ]
