@@ -22,6 +22,7 @@ from django.urls import path, include  # Ensure include is imported here
 
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', UserListCreate.as_view(), name="users_list"),
